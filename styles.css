@@ -388,21 +388,21 @@ a {
 
 .benefit-layout {
   display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
-  gap: 26px;
-  align-items: start;
+  grid-template-columns: 1fr;
+  gap: 40px;
 }
 
 .benefit-list {
   display: grid;
-  gap: 18px;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 24px;
 }
 
 .benefit-item {
-  display: grid;
-  grid-template-columns: 72px 1fr;
-  gap: 18px;
-  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 32px;
   border-radius: var(--radius-lg);
   background: rgba(255, 253, 248, 0.7);
   border: 1px solid var(--line);
@@ -422,9 +422,13 @@ a {
 }
 
 .highlight-card {
-  padding: 32px;
+  padding: 40px;
   border-radius: var(--radius-xl);
   background: linear-gradient(180deg, #fff8eb 0%, #fffdf8 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
 .highlight-label {
@@ -435,7 +439,7 @@ a {
 
 .timeline {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(4, 1fr);
   gap: 18px;
   justify-content: center;
 }
