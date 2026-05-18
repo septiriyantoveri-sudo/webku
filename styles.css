@@ -1,6 +1,10 @@
 :root {
+  color-scheme: light;
   --bg: #f3efe5;
+  --bg-soft: #f8f4ec;
+  --bg-warm: #efe6d7;
   --surface: #fffdf8;
+  --surface-soft: #fbf6ed;
   --surface-strong: #f7f1e4;
   --text: #18392b;
   --muted: #4f675c;
@@ -21,15 +25,19 @@
 
 html {
   scroll-behavior: smooth;
+  background-color: var(--bg);
 }
 
 body {
   margin: 0;
   font-family: "Plus Jakarta Sans", sans-serif;
   color: var(--text);
+  background-color: var(--bg);
   background:
     radial-gradient(circle at top left, rgba(216, 184, 106, 0.2), transparent 34%),
-    linear-gradient(180deg, #f8f4ec 0%, #f1ece2 100%);
+    linear-gradient(180deg, var(--bg-soft) 0%, var(--bg-warm) 100%);
+  background-repeat: no-repeat;
+  background-attachment: scroll;
 }
 
 img {
@@ -59,8 +67,7 @@ a {
   padding: 16px 20px;
   border: 1px solid var(--line);
   border-radius: 999px;
-  background: rgba(255, 253, 248, 0.82);
-  backdrop-filter: blur(12px);
+  background: #fdfaf4;
   box-shadow: 0 10px 30px rgba(16, 49, 36, 0.08);
 }
 
@@ -208,7 +215,7 @@ a {
 
 .button-secondary {
   border: 1px solid var(--line);
-  background: rgba(255, 255, 255, 0.55);
+  background: #f8f3ea;
 }
 
 .hero-points {
@@ -404,7 +411,7 @@ a {
   gap: 20px;
   padding: 32px;
   border-radius: var(--radius-lg);
-  background: rgba(255, 253, 248, 0.7);
+  background: var(--surface-soft);
   border: 1px solid var(--line);
 }
 
@@ -482,7 +489,7 @@ a {
   padding: 18px 20px;
   border-radius: 20px;
   border: 1px solid var(--line);
-  background: rgba(255, 255, 255, 0.85);
+  background: #fffaf2;
   transition: transform 0.32s ease, box-shadow 0.32s ease, border-color 0.32s ease;
 }
 
