@@ -53,6 +53,7 @@ a {
 .page-shell {
   width: min(calc(100% - 32px), var(--container));
   margin: 0 auto 48px;
+  overflow-x: clip;
 }
 
 .site-header {
@@ -162,6 +163,7 @@ a {
 .hero h1 {
   font-size: clamp(2.6rem, 4vw, 4.8rem);
   max-width: 12ch;
+  overflow-wrap: anywhere;
 }
 
 .hero-text,
@@ -275,7 +277,7 @@ a {
 .hero-image {
   width: 100%;
   height: 100%;
-  min-height: 500px;
+  min-height: clamp(320px, 48vw, 500px);
   object-fit: cover;
   border-radius: 20px;
 }
@@ -326,7 +328,7 @@ a {
 .why-us-grid {
   margin-top: 26px;
   align-items: stretch;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
   justify-content: center;
 }
 
@@ -369,7 +371,7 @@ a {
 }
 
 .services .card-grid {
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
   justify-content: center;
 }
 
@@ -401,7 +403,7 @@ a {
 
 .benefit-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
   gap: 24px;
 }
 
@@ -478,7 +480,7 @@ a {
 
 .contact-cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
   gap: 18px;
 }
 
@@ -683,6 +685,12 @@ a {
     gap: 32px;
   }
 
+  .hero h1,
+  .section-heading h2,
+  .cta-section h2 {
+    overflow-wrap: anywhere;
+  }
+
   .hero-card {
     padding: 18px;
   }
@@ -694,7 +702,7 @@ a {
   }
 
   .hero-image {
-    min-height: 340px;
+    min-height: clamp(220px, 62vw, 340px);
   }
 
   .benefit-item {
@@ -703,5 +711,66 @@ a {
 
   .cta-section {
     padding: 28px;
+  }
+
+  .contact-card {
+    padding: 16px 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .page-shell {
+    width: min(calc(100% - 20px), var(--container));
+  }
+
+  .section {
+    padding: 56px 0;
+  }
+
+  .site-header {
+    gap: 16px;
+    padding: 12px 14px;
+  }
+
+  .brand {
+    min-width: 0;
+  }
+
+  .brand-text {
+    min-width: 0;
+  }
+
+  .brand-text strong,
+  .brand-text small {
+    overflow-wrap: anywhere;
+  }
+
+  .hero {
+    gap: 24px;
+  }
+
+  .hero h1 {
+    font-size: clamp(2rem, 11vw, 2.8rem);
+  }
+
+  .hero-text {
+    font-size: 1rem;
+  }
+
+  .info-card,
+  .benefit-item,
+  .timeline-item,
+  .cta-section {
+    padding: 22px;
+  }
+
+  .contact-card {
+    gap: 14px;
+    padding: 14px 16px;
+  }
+
+  .contact-icon {
+    width: 50px;
+    height: 50px;
   }
 }
